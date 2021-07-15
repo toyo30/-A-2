@@ -9,8 +9,8 @@ html {
 
 /* reset */
 
-body, div, h1, h2, h3, p, a,
-address, ul, li, article,
+body, div, h1, h2, h3, h4, h5, p, a,
+address, ul, ol, li, dl, dt, dd, article,
 footer, header,
 nav, section {
     margin:0; 
@@ -18,13 +18,14 @@ nav, section {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
+    color:#000;
 }
 
 body {
     line-height: 1;
 }
 
-ul {
+ul, ol {
     list-style:none;
 }   
 
@@ -197,12 +198,14 @@ table th, td {
     border-bottom: 1px solid #e4e4e4;
 }
 
+/* 태그 선택자 클래스 선택자로 바꾸기 */
 tfoot tr{
     font-weight: bold;
     border-top: 1px solid #a5a5a5;
     border-bottom: 1px solid #e4e4e4;
 }
 
+/* 태그 선택자 클래스 선택자로 바꾸기 */
 tfoot{
     border-top: 1px solid #a5a5a5;
     border-bottom: 1px solid #e4e4e4;
@@ -211,11 +214,158 @@ tfoot{
 
 /*form*/ 
 
+.join_box {
+    border: 1px solid #e4e4e4;
+    background-color: #fbfbfb;
+    padding: 20px;
+    margin: 0 auto;
+}
+.join_title {
+    font-size: 14px;
+    margin: 10px 0 10px 0;
+}
+
+.join_row {
+    width: 900px;
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+.inp_box, .bir_wrap {
+    display: block;
+    border: 1px solid blue;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.int {
+    border: 1px solid green;
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.bir_info {
+    display: flex;
+    float: left;
+    border: 1px solid orange;
+    width: 264px;
+    height: 30px;
+}
+
+.bir_wrap::after {
+    content:'';
+    clear:both;
+    display: block;
+}
+
+.bir {
+    width: 264px;
+    height: 100%;
+}
+
+.rad_box {
+    display: inline-block;
+    margin-left: 14px;
+}
+
+.phn_check {
+    border: 1px solid green;
+    font-size: 12px;
+    height: 30px;
+    width: 750px;
+}
+
+.btn_check {
+    border: 1px solid #08a600;
+    background: #4ec53d;
+    font-size: 12px;
+    color: #fff;
+    margin-left: 12px;
+    width: 120px;
+    height: 30px;
+}
+
+.btn_type {
+    border: 1px solid #08a600;
+    background: #4ec53d;
+    font-size: 16px;
+    color: #fff;
+    margin-left: 12px;
+    width: 900px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.chec_point {
+    margin: 0 auto;
+    margin-left: 50px;
+}
+
+
+/* list */
 
 
 
+/* dictinary */
+.content_elements {
+    border: 1px solid #e4e4e4;
+    padding: 30px 20px;
+    margin: 10px 0px;
+}
+
+.dic_title {
+    margin: 0 auto;
+    font-size: 32px;
+    text-align: center;  
+    margin-bottom: 30px;
+}
+
+.dic_box {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.dic_words {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.dic_source {
+    font-size: 12px;
+    color: #559bfa;
+    margin-left: 10px;
+}
+
+.dic_dftn {
+    font-size:12px;
+    line-height: 18px;
+}
 
 
+/* 실시간 검색어 */
+
+.search_box {
+    height:30px;
+    line-height: 30px;
+}
+
+.search_rank {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #e4e4e4;
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    line-height: 17px;
+    
+}
+
+.search_word {
+    margin-left: 14px;
+}
 /* footer */
 
 .footer {
