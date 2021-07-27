@@ -11,8 +11,8 @@ html {
 
 body, div, h1, h2, h3, h4, h5, p, a,
 address, ul, ol, li, dl, dt, dd, article,
-footer, header,
-nav, section {
+footer, header, nav, section, input, button,
+input[type="checkbox"] {
     margin:0; 
     padding:0; 
     border: 0;
@@ -34,17 +34,23 @@ a {
 }
 
 a:active, a:hover {
-    outline:none;
+    text-decoration: none;
+    color: #000;
+}
+
+address {
+    font-style:normal;
 }
 
 
-/* .blind {
+/* blind */
+.blind {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
     clip:rect(0,0,0,0);
-} */
+} 
 
 /* 최소 너비값 지정 */
 
@@ -53,13 +59,14 @@ body{
 }
 
 
+
 /* 헤더 */
 
-.header_box {
+.title_box {
     background: #000;
 }
 
-h1 {
+.title_area {
     width:1000px;
     height:120px;
     margin: 0 auto;
@@ -72,15 +79,15 @@ h1 {
 /* 메뉴 */
 
 
-.nav_box {
+.nav_area {
+    display:flex;
     width: 1000px;
     margin:0 auto;
     padding:40px;
-    display:flex;
 }
 
 .nav_section {
-    width:318px;
+    width: calc(100% /3);
     height:33px;
     border: 1px solid #d1d1d1;
     line-height:33px;
@@ -150,24 +157,38 @@ h1 {
 .content_subtitle {
     font-size: 14px;
     color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* table */
 
+.content_part{
+    margin-bottom: 10px;
+}
 
+.table_childsize {
+    margin-bottom: 50px;
+}
 
 table {
     table-layout:fixed;
-    width: 938px;
-    position: relative;
+    width: 100%;
     font-size: 12px;
     color: #555;
-    box-sizing:border-box  
+    box-sizing:border-box;
+    border-collapse: collapse;
 }
 
-table th, td {
+.table_childsize th, td,
+.table_refundsearch th, td  {
     height: 30px;
 }
+
+.table_head {
+    background: #fbfbfb;
+}
+
 /* table_childsize */
 
 .table_childsize {
@@ -175,106 +196,138 @@ table th, td {
     border-collapse:collapse;
 }
 
-.table_childsize th,.table_childsize td{
+.table_childsize th,
+.table_childsize td{
     border: 1px solid #e4e4e4;
     height: 30px;
     text-align:center;
 } 
 
-.table_head {
-    background: #fbfbfb;
+
+.table_childsize .table_head tr th {
+    border-bottom: 0;
 }
 
 /* table_refundsearch */
 
-
-
-.table_refundsearch td{
-    text-align: center;
+.table_refundsearch th, 
+.table_refundsearch td {
+    font-weight: normal;
 }
 
-.table_refundsearch{
+.table_refundsearch .table_head {
     border-top: 2px solid #a5a5a5;
     border-bottom: 1px solid #e4e4e4;
 }
 
-/* 태그 선택자 클래스 선택자로 바꾸기 */
-tfoot tr{
+.table_refundsearch tfoot {
+    border-top: 1px solid #a5a5a5;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.table_refundsearch td{
+    text-align: right;
+}
+
+.table_tfoot th,
+.table_tfoot td {
     font-weight: bold;
-    border-top: 1px solid #a5a5a5;
-    border-bottom: 1px solid #e4e4e4;
 }
 
-/* 태그 선택자 클래스 선택자로 바꾸기 */
-tfoot{
-    border-top: 1px solid #a5a5a5;
-    border-bottom: 1px solid #e4e4e4;
+.price_text {
+    margin-right: 60px;
 }
-
 
 /*form*/ 
 
 .join_box {
+    margin: 0 auto;
     border: 1px solid #e4e4e4;
     background-color: #fbfbfb;
     padding: 20px;
-    margin: 0 auto;
 }
+
+
 .join_title {
     font-size: 14px;
-    margin: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
 }
 
-.join_row {
-    width: 900px;
-    border: 1px solid red;
-    margin: 0 auto;
-}
-
-.inp_box, .bir_wrap {
-    display: block;
-    border: 1px solid blue;
+.inp_box {
     width: 100%;
+    border: 1px solid #e4e4e4;
+    padding: 8px;
     box-sizing: border-box;
+    background: #fff;
 }
 
 .int {
-    border: 1px solid green;
     width: 100%;
-    font-size: 12px;
     height: 30px;
-    box-sizing: border-box;
+    border: 0 none;
+    font-size: 12px;
+    padding: 0;
+    text-indent: 10px;
+}
+
+.bir_wrap {
+    display:flex;
+} 
+
+.bir_info + .bir_info {
+    margin-left: 10px;
 }
 
 .bir_info {
-    display: flex;
-    float: left;
-    border: 1px solid orange;
-    width: 264px;
+    width: calc(100% / 3);
     height: 30px;
 }
 
-.bir_wrap::after {
-    content:'';
-    clear:both;
-    display: block;
+.bir_info select{
+    text-indent: 10px;
 }
 
+/* .bir_wrap::after {
+    display: block;
+    content:'';
+    clear:both;
+}  */
+
+
 .bir {
-    width: 264px;
+    width: 100%;
     height: 100%;
+    border: 1px solid #e4e4e4;
+    font-size: 12px;
 }
 
 .rad_box {
-    display: inline-block;
-    margin-left: 14px;
+    display: flex;
+    font-size: 12px;
+    width: 100%;
+}
+
+.rad_area + .rad_area {
+    margin-left: 80px;
+}
+
+.rad_box input[type="radio"],
+.hobby_box input[type="checkbox"]{
+    position: relative;
+    top: 1.5px;
+}
+
+.confirm_box {
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.confirm_area {
+    width: calc(100% * 4/5);
 }
 
 .phn_check {
-    border: 1px solid green;
-    font-size: 12px;
-    height: 30px;
-    width: 750px;
+    width: 100%;
 }
 
 .btn_check {
@@ -282,20 +335,49 @@ tfoot{
     background: #4ec53d;
     font-size: 12px;
     color: #fff;
-    margin-left: 12px;
-    width: 120px;
-    height: 30px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    width: calc(100% * 1/5);
 }
 
-.btn_type {
+.greeting_area {
+    margin-bottom: 5px;
+    border: 1px solid #e4e4e4;
+    padding: 8px;
+    background:#fff;
+    box-sizing: border-box;
+}
+
+.greeting_text {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    resize: none;
+    /* input의 border을 없애고, 밖에 있는 보더로 표현하고 싶다. 이거 이거 어떻게 처리하냐.,,.,.,.*/
+}
+
+.hobby_box {
+    display: flex;
+    font-size: 12px;
+}
+
+.hobby_area + .hobby_area{
+    margin-left: 50px;
+}
+
+.hobby_box input + input {
+    margin-left: 50px;
+}
+
+.btn_join{
     border: 1px solid #08a600;
     background: #4ec53d;
     font-size: 16px;
     color: #fff;
-    margin-left: 12px;
-    width: 900px;
+    width: 100%;
     height: 50px;
     margin: 0 auto;
+
 }
 
 .chec_point {
@@ -346,6 +428,8 @@ tfoot{
 
 /* 실시간 검색어 */
 
+
+
 .search_box {
     height:30px;
     line-height: 30px;
@@ -366,9 +450,131 @@ tfoot{
 .search_word {
     margin-left: 14px;
 }
+
+/* cookie_list */
+
+.cookie_box {
+    list-style-type:initial;
+}
+
+.cookie_text {
+    font-size: 12px;
+}
+
+.text_point {
+    color: #559bfa;
+    text-decoration: underline;
+}
+
+.none_under {
+    text-decoration: none;
+}
+.red_point {
+    color: #ec5336;
+}
+
+.livesearch_elements {
+    border: 1px solid #e4e4e4;
+    padding: 30px 20px;
+    margin: 10px 0px;
+    width: 200px;
+}
+
+/* news */
+
+.news_pic {
+    float: left;
+    margin-right: 20px;
+}
+
+.news_inner::after {
+    content: '';
+    clear:both;
+    display: block;
+}
+
+.news_inner {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px;
+}
+
+.news_text {
+    padding: 0 10px;
+}
+
+.news_head {
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #00c;
+    line-height: 18px;
+}
+
+.news_summary {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+
+
+/* 웹툰*/
+.webtoon_box {
+    width: 936px;
+    margin: 0 auto;
+}
+
+.webtoon_row {
+    float: left;
+    width: 285px;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.webtoon_pic, .webtoon_text {
+    margin: 10px;
+}
+
+.webtoon_content_elements {
+    width: 936px;
+    margin: 0 auto;
+    border: 1px solid #e4e4e4;
+}
+
+.webtoon_box::after {
+    display: block;
+    content: '';
+    clear: both;   
+}
+
+.webtoon_lin {
+    display: block;
+    position: absolute;
+    width: 285px;
+    height: 175px;
+}
+
+
+.webtoon_type_smart, .webtoon_type_cut {
+    font-size: 10px;
+    color: #fff;
+}
+
+.webtoon_type_smart {
+    border: 1px solid #df4e28;
+    background: #ec5336;
+}
+
+.webtoon_type_cut {
+    border: 1px solid #71b036;
+    background: #80c83d;
+}
+
 /* footer */
 
-.footer {
+.footer_box {
     border-top: 1px solid #d1d1d1;
     text-align: center;
     font-size:12px;
@@ -378,13 +584,11 @@ tfoot{
     line-height: 1.5em;
 }
 
+
+
 .address_text{
     color:#999;
-    
-}
-
-.copy_text {
-    color: #000;
+    margin-bottom: 10px; 
 }
 
 
