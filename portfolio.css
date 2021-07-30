@@ -12,7 +12,7 @@ html {
 body, div, h1, h2, h3, h4, h5, p, a,
 address, ul, ol, li, dl, dt, dd, article,
 footer, header, nav, section, input, button,
-input[type="checkbox"] {
+input[type="checkbox"], textarea {
     margin:0; 
     padding:0; 
     border: 0;
@@ -42,8 +42,13 @@ address {
     font-style:normal;
 }
 
+input, button {
+    background:transparent; cursor:pointer; overflow:visible; 
+}
+
 
 /* blind */
+
 .blind {
     position: absolute;
     width: 1px;
@@ -120,14 +125,12 @@ body{
 
 
 .body_title {
-    font-size:20px;
-    color:#000;
     width: 1000px;
-    margin:0 auto;
+    font-size:20px;
     padding-bottom: 20px;
+    color:#000;
     border-bottom: 1px solid #454545;
 }
-
 
 .content_box {
     margin-top:30px;
@@ -135,7 +138,7 @@ body{
 
 
 .content_title {
-    width:1000px;
+    width: 1000px;
     height:46px;
     border:1px solid #d1d1d1;
     background: #f7f7f7;
@@ -150,12 +153,13 @@ body{
     width:1000px;
     border:1px solid #d1d1d1;
     box-sizing:border-box;
-    padding:20px 30px;
+    padding:30px 30px;
     border-top: 0;
 }
 
 .content_subtitle {
     font-size: 14px;
+    line-height: 18px;
     color: #000;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -247,7 +251,9 @@ table {
     padding: 20px;
 }
 
-
+.join_row {
+    margin-bottom: 20px;
+}
 .join_title {
     font-size: 14px;
     margin: 20px 0 10px 0;
@@ -270,6 +276,8 @@ table {
     text-indent: 10px;
 }
 
+/* form_birthday */
+
 .bir_wrap {
     display:flex;
 } 
@@ -287,12 +295,6 @@ table {
     text-indent: 10px;
 }
 
-/* .bir_wrap::after {
-    display: block;
-    content:'';
-    clear:both;
-}  */
-
 
 .bir {
     width: 100%;
@@ -301,21 +303,31 @@ table {
     font-size: 12px;
 }
 
+/* form_radio */
+
 .rad_box {
     display: flex;
     font-size: 12px;
-    width: 100%;
+    line-height: 14px;
 }
+
 
 .rad_area + .rad_area {
-    margin-left: 80px;
+    margin-left: 40px;
 }
 
-.rad_box input[type="radio"],
-.hobby_box input[type="checkbox"]{
+
+.rad_box .rad_point,
+.hobby_box .chec_point{
     position: relative;
     top: 1.5px;
 }
+
+.rad_point {
+    margin-right: 5px;
+}
+
+/* form_phone_confirm */
 
 .confirm_box {
     display: flex;
@@ -326,20 +338,35 @@ table {
     width: calc(100% * 4/5);
 }
 
-.phn_check {
-    width: 100%;
-}
-
 .btn_check {
+    width: calc(100% * 1/5);
     border: 1px solid #08a600;
     background: #4ec53d;
     font-size: 12px;
+    line-height: 16px;
     color: #fff;
     margin-left: 10px;
     box-sizing: border-box;
-    width: calc(100% * 1/5);
 }
 
+/* form_hobby */
+
+.hobby_box {
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.hobby_area + .hobby_area{
+    margin-left: 50px;
+}
+
+.chec_point {
+    margin-left: 50px;
+}
+
+
+/* form_greeting */
 .greeting_area {
     margin-bottom: 5px;
     border: 1px solid #e4e4e4;
@@ -356,57 +383,53 @@ table {
     /* input의 border을 없애고, 밖에 있는 보더로 표현하고 싶다. 이거 이거 어떻게 처리하냐.,,.,.,.*/
 }
 
-.hobby_box {
-    display: flex;
-    font-size: 12px;
-}
 
-.hobby_area + .hobby_area{
-    margin-left: 50px;
-}
-
-.hobby_box input + input {
-    margin-left: 50px;
-}
 
 .btn_join{
+    width: 100%;
+    height: 50px;
     border: 1px solid #08a600;
     background: #4ec53d;
     font-size: 16px;
     color: #fff;
-    width: 100%;
-    height: 50px;
-    margin: 0 auto;
-
 }
 
-.chec_point {
-    margin: 0 auto;
-    margin-left: 50px;
-}
+
 
 
 /* list */
 
 
 
-/* dictinary */
-.content_elements {
-    border: 1px solid #e4e4e4;
-    padding: 30px 20px;
-    margin: 10px 0px;
+/* list_dictinary */
+
+
+.list_inner {
+    margin-bottom: 50px;
 }
 
+.list_inner:nth-child(n + 5){
+    margin-bottom:0;
+}
+
+
+.content_elements {
+    border: 1px solid #e4e4e4;
+    padding: 20px 21px 20px 20px;
+    margin: 10px 0; 
+    box-sizing: border-box;
+}
+
+
 .dic_title {
-    margin: 0 auto;
     font-size: 32px;
+    line-height: 35px;
     text-align: center;  
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .dic_box {
-    text-align: left;
-    margin-top: 20px;
+    margin: 20px 10px;
 }
 
 .dic_words {
@@ -429,77 +452,98 @@ table {
 /* 실시간 검색어 */
 
 
+.livesearch_elements {
+    border: 1px solid #e4e4e4;
+    padding: 20px;
+    margin: 10px 0px;
+    width: 215px;
+}
 
 .search_box {
+    display: flex;
     height:30px;
     line-height: 30px;
+    align-items: center;
 }
 
 .search_rank {
-    display: inline-block;
     width: 17px;
     height: 17px;
-    border: 1px solid #e4e4e4;
+    border: 1px solid #e0e0e0;
     font-size: 10px;
     color: #666;
     text-align: center;
     line-height: 17px;
-    
+    box-sizing: border-box;
 }
 
 .search_word {
     margin-left: 14px;
 }
 
+.search_word:hover {
+    text-decoration: underline;
+}
+
 /* cookie_list */
 
 .cookie_box {
     list-style-type:initial;
+    margin: 0 10px;
 }
 
 .cookie_text {
+    margin: 10px;
     font-size: 12px;
+    line-height: 16px;
 }
 
-.text_point {
-    color: #559bfa;
-    text-decoration: underline;
+.cookie_text:nth-child(1) {
+    font-weight: bold;
 }
-
 .none_under {
     text-decoration: none;
 }
-.red_point {
-    color: #ec5336;
+
+.hightlight_blue_bold,
+.hightlight_blue_under {
+    color: #559bfa;
 }
 
-.livesearch_elements {
-    border: 1px solid #e4e4e4;
-    padding: 30px 20px;
-    margin: 10px 0px;
-    width: 200px;
+.hightlight_red {
+    color: #ec5336;
+    font-weight: normal;
 }
+
+.hightlight_blue_under {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
 
 /* news */
 
+
+
 .news_pic {
     float: left;
-    margin-right: 20px;
+    margin-right: 9px;
 }
 
 .news_inner::after {
     content: '';
     clear:both;
     display: block;
-}
+} 
 
 .news_inner {
     border-bottom: 1px solid #e4e4e4;
-    padding: 10px;
+    padding: 20px 0;
 }
 
-.news_text {
-    padding: 0 10px;
+.news_inner:nth-child(n+3) {
+    border-bottom: 0;
+    padding: 20px 0 0 0;
 }
 
 .news_head {
@@ -507,7 +551,7 @@ table {
     text-decoration: underline;
     font-weight: bold;
     color: #00c;
-    line-height: 18px;
+    line-height: 25px;
 }
 
 .news_summary {
@@ -518,58 +562,66 @@ table {
 
 
 /* 웹툰*/
+
 .webtoon_box {
-    width: 936px;
-    margin: 0 auto;
+    position: relative;
 }
 
 .webtoon_row {
-    float: left;
     width: 285px;
-    position: relative;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-
-.webtoon_pic, .webtoon_text {
-    margin: 10px;
-}
-
-.webtoon_content_elements {
-    width: 936px;
-    margin: 0 auto;
-    border: 1px solid #e4e4e4;
+    float: left;
 }
 
 .webtoon_box::after {
     display: block;
     content: '';
-    clear: both;   
+    clear: both;
 }
 
-.webtoon_lin {
+.webtoon_row {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.webtoon_row:nth-child(3n + 1){
+    margin-left: 0;
+}
+
+.webtoon_link {
     display: block;
-    position: absolute;
+}
+
+.webtoon_pic .webtoon_img{
     width: 285px;
-    height: 175px;
+    height: 140px;
 }
 
 
-.webtoon_type_smart, .webtoon_type_cut {
+.webtoon_title {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.webtoon_episode {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.webtoon_type_cut, .webtoon_type_smart {
     font-size: 10px;
     color: #fff;
-}
-
-.webtoon_type_smart {
-    border: 1px solid #df4e28;
-    background: #ec5336;
+    border: 1px solid;
+    line-height: 14px;
+    padding: 3px 5px;
+    margin-right: 3px;
 }
 
 .webtoon_type_cut {
-    border: 1px solid #71b036;
-    background: #80c83d;
+    background: #71b036;
+}
+
+.webtoon_type_smart {
+    background: #ec5336;
 }
 
 /* footer */

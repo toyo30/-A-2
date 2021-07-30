@@ -213,7 +213,7 @@
                 
 
                 <div class="join_box">
-                    <form class="join_content">
+                    <form class="join_content" action="/join_act" method="post" autocomplete="on" target="_blank">
                         
                         <div class="join_row">
                             <h5 class="join_title">
@@ -280,12 +280,11 @@
                             </h5>
                             <div class="rad_box">
                                 <div class="rad_area">
-                                    <input type="radio" name="sex" id="man" id="sex" value="man">
-                                    <label for="man">남자</label>
+                                    <label class="man_rad"><input type="radio" name="sex" value="man" id="sex" class="rad_point">남자</label>
+                                    
                                 </div>
                                 <div class="rad_area">
-                                    <input type="radio" name="sex" value="girl" id="girl">
-                                    <label for="girl">여자</label>
+                                    <label class="girl_rad"><input type="radio" name="sex" value="girl" id="sex" class="rad_point">여자</label>
                                 </div>
                             </div>
                         </div>
@@ -309,9 +308,10 @@
                                 <p class="inp_box confirm_area">
                                     <input type="ph_number" name="ph_number" id="ph_number" placeholder="숫자만 입력해주세요." class="phn_check int">
                                 </p>
-                                    <button class="btn_check">
-                                        <span>인증번호받기</span>
-                                    </button>
+                                
+                                <button class="btn_check" type="submit">
+                                    인증번호받기
+                                </button>
                             </div>
                             <p class="inp_box">
                                 <input type="ph_number" name="ph_number" id="ph_number" class="int" placeholder="인증번호를 입력해주세요.">
@@ -380,8 +380,8 @@
                         </div>
                         
                         <div class="btn_area">
-                            <button type="button" id="btn_join" class="btn_join">
-                                <span>가입하기</span>
+                            <button type="sumit" id="btn_join" class="btn_join">
+                                가입하기
                             </button>
                         </div>
                     </form>
@@ -404,53 +404,58 @@
                 리스트 요소
             </h3>
             <div class="content_area">
-                <div class="content_inner">
+                <div class="list_inner">
                     <h4 class="content_subtitle">'프로젝트' 사전 검색 결과</h4>
                     <div class="content_elements">
                         <h5 class="dic_title">프로젝트</h5>
-                        <dl class="dic_box">
+                        <div class="dic_box">
                             <dt class="dic_words">프로젝트<span class="dic_source">영약학사전</span></dt>
                             <dd class="dic_dftn"><p>연구나 새로운 사업의 개발을 위해 유기적이고 조직적인 계획. 원자력이나 우주개발 등은 대형 프로젝트를 조직하여 이루어진다. 일반적으로는 특정한 목표, 계획을 위한 학습<br>활동, 실행계획 등을 가르킨다.</p></dd>
-                        </dl>
-                        <dl class="dic_box">   
+                        </div>
+                        <div class="dic_box">   
                             <dt class="dic_words">프로젝트<span class="dic_source">Basic 중학생을 위한 기술, 가정 용어사전</span></dt>
                             <dd class="dic_dftn">어떤 특정한 목적 달성을 위하여 실시되는 시스템 개발, 프로그램 설계, 연구 개발 계획 혹은 건설 공사 등과 같이 한 번에 그치는 성격을 갖는 단위 작업이나 사업.</dd>
-                        </dl> 
+                        </div> 
                         
                     </div>
+                </div>
 
-                    <div class="content_inner">
-                        <h4 class="content_subtitle">실사간 검색어</h4>
+                    <div class="list_inner">
+                        <h4 class="content_subtitle">실시간 검색어</h4>
                         <div class="livesearch_elements">
                             <ol>
-                                <li><div class="search_box"><span class="search_rank">1</span><a class="search_word">입추</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">2</span><a class="search_word">런닝맨 유재석</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">3</span><a class="search_word">런닝맨</a></li>
-                                <li><div class="search_box"><span class="search_rank">4</span><a class="search_word">소나기</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">5</span><a class="search_word">주간 날씨</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">6</span><a class="search_word">깔라만시</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">7</span><a class="search_word">내 아이디는 강남미인</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">8</span><a class="search_word">차은우</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">9</span><a class="search_word">한국사능력검정시험</a></div></li>
-                                <li><div class="search_box"><span class="search_rank">10</span><a class="search_word">맛있는 녀석들</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">1</span><a class="search_word" href="#">입추</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">2</span><a class="search_word" href="#">런닝맨 유재석</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">3</span><a class="search_word" href="#">런닝맨</a></li>
+                                <li><div class="search_box"><span class="search_rank">4</span><a class="search_word" href="#">소나기</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">5</span><a class="search_word" href="#">주간 날씨</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">6</span><a class="search_word" href="#">깔라만시</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">7</span><a class="search_word" href="#">내 아이디는 강남미인</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">8</span><a class="search_word" href="#">차은우</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">9</span><a class="search_word" href="#">한국사능력검정시험</a></div></li>
+                                <li><div class="search_box"><span class="search_rank">10</span><a class="search_word" href="#">맛있는 녀석들</a></div></li>
                             </ol>
                         </div>
+                    </div>
 
-                        <div class="content_inner">
-                            <h4 class="content_subtitle">쿠키 이용안내</h4>
-                            <div class="content_elements">
+                    <div class="list_inner">
+                        <h4 class="content_subtitle">쿠키 이용안내</h4>
+                        <div class="content_elements">
                                 <ul class="cookie_box">
-                                    <li class="cookie_text"><span class="text_point none_under">웹툰 작품</span>은 쿠키를 사용하여 대여/구매하실 수 있습니다.</li>
-                                    <li class="cookie_text">쿠키 구매 시 지급되는 보너스 쿠키의 수량은 변경될 수 있으며, <span class="red_point">유효기간은 지금 후 90일</span>입니다.</li>
-                                    <li class="cookie_text">구매 후 7일 이내, 사용하지 않은 쿠기 패키지는 <span class="text_point">구매내역</span>에서 직접 구매 취소할 수 있습니다.</li>
+                                    <li class="cookie_text"><strong class="hightlight_blue_bold">웹툰 작품</strong>은 쿠키를 사용하여 대여/구매하실 수 있습니다.</li>
+                                    <li class="cookie_text">쿠키 구매 시 지급되는 보너스 쿠키의 수량은 변경될 수 있으며, <strong class="hightlight_red">유효기간은 지금 후 90일</strong>입니다.</li>
+                                    <li class="cookie_text">구매 후 7일 이내, 사용하지 않은 쿠기 패키지는 <strong class="hightlight_blue_under">구매내역</strong>에서 직접 구매 취소할 수 있습니다.</li>
                                     <li class="cookie_text">일부 사용 후 잔여 쿠키에 대한 구매 취소는 고객센터를 고객센터를 통해 가능하며, 쿠키 구매 시 지급된 보너스 쿠키를 사용한 경우에는 해당 분량을 제외하고 환불됩니다.</li>
-                                    <li class="cookie_text">쿠키 구매 또는 사용 전 이용약관 동의가 필요합니다.</li>
+                                    <li class="cookie_text">쿠키 구매 또는 사용 전 이용약관 동의가 필요합니다.<br>
+                                        <a class="term_link" href="#"><strong class="hightlight_blue_under">쿠키 이용약관</strong></a>
+                                    </li>
                                 </ul>
-                                <span class="text_point">쿠키 이용약관</span>
-                            </div>
+                                
+                        </div>
+                    </div>
                         
 
-                            <div class="content_inner">
+                            <div class="list_inner">
                                 <h4 class="content_subtitle">뉴스</h4>
                                 <div class="content_elements">
                                     <ul class="news_box">
@@ -462,7 +467,9 @@
                                                 <a class="news_head">[날씨] 내일도 35도 안팎 폭염・내륙 소나기⋯습도 높아 후텁지근
                                                 </a>
                                                 <div class="news_summary">
-                                                    오늘은 입추 절기지만 가을은 아직 멀리있는 것 같습니다. 일부 내륙에는 소나기가 지났지만 소나기도 더위의 기세를 누그러뜨리진 못했는데요. 동해안을 제외한 전국 대부분 지방에 폭염 특보가 이어지는 가운데 내일도 한낮에 서울과 대전 35도, 광주와 대구가 36도까지 오를 것으로 예상됩니다. 내일도 대기가 불안정해지 면서 오후에 내륙에는 소나기가 지나는 곳이 있겠습니다. 
+                                                    오늘은 입추 절기지만 가을은 아직 멀리있는 것 같습니다. 일부 내륙에는 소나기가 지났지만 소나기도 더위의 기세를 누그러뜨리진 못했는데요. 동해안을 제외한<br> 
+                                                    전국 대부분 지방에 폭염 특보가 이어지는 가운데 내일도 한낮에 서울과 대전 35도, 광주와 대구가 36도까지 오를 것으로 예상됩니다. 내일도 대기가 불안정해지<br>
+                                                    면서 오후에 내륙에는 소나기가 지나는 곳이 있겠습니다. 
                                                 </div>
                                             </div>
                                         </li>
@@ -470,7 +477,8 @@
                                             <div class="news_pic">
                                                 <a class="news_head">[펫카드] 강아지 중성화가 필요한 이유</a>
                                                 <!-- h5 태그랑 a랑 같이 써도 될 것 같은 느낌적인 느낌이 있다. -->
-                                                <div class="news_summary">(서울=뉴스1) 최서윤 기자,방은영 디자이너 = 강아지 중성화 수술을 놓고 찬반이 팽팽하게 엇갈린다. 많은 사람들은 사람들과 공존하려면 개체수 조절을 위해 필요하다고 주장한 다. 그러나 어떤 사람들은 인위적인 수술은 안된다며 반대한다.</div>
+                                                <div class="news_summary">(서울=뉴스1) 최서윤 기자,방은영 디자이너 = 강아지 중성화 수술을 놓고 찬반이 팽팽하게 엇갈린다. 많은 사람들은 사람들과 공존하려면 개체수 조절을 위해 필요하다고 주장한<br>
+                                                    다. 그러나 어떤 사람들은 인위적인 수술은 안된다며 반대한다.</div>
                                             </div>
                                         </li>
                                         <li class="news_inner">
@@ -480,7 +488,9 @@
                                             <div class="news_text">
                                                 <a class="news_head">다이어트에 좋은 여름 복숭아, 먹으면 안 되는 사람 있어
                                                 </a>
-                                                <div class="news_summary">복숭아가 제철이다. 여름 복숭아는 다양한 건강 효과를 낸다. 복숭아에는 포도당, 과당, 수분이 풍부하고 유기산(산성을 띠는 물질로 식품에서 신맛을 냄)이 0.5% 정도로 적게 들어 단맛이 강하다. 복숭아의 열량은 100g당 36kcal다. 복숭아 한 개에 약 100kcal 정도다. 포만감에 비해 열량이 적은 편이어서 다이어트를 하는 사람에게도 좋다. 비타민이 많아서 피로 해소에 도움이 된다.
+                                                <div class="news_summary">복숭아가 제철이다. 여름 복숭아는 다양한 건강 효과를 낸다. 복숭아에는 포도당, 과당, 수분이 풍부하고 유기산(산성을 띠는 물질로 식품에서 신맛을 냄)이 0.<br>
+                                                    5% 정도로 적게 들어 단맛이 강하다. 복숭아의 열량은 100g당 36kcal다. 복숭아 한 개에 약 100kcal 정도다. 포만감에 비해 열량이 적은 편이어서 다이어트를<br>
+                                                    하는 사람에게도 좋다. 비타민이 많아서 피로 해소에 도움이 된다.
                                                 </div>
                                             </div>
                                         </li>
@@ -490,15 +500,16 @@
                             
                         
                         
-                        <div class="content_inner">
+                        <div class="list_inner">
                             <h4 class="content_subtitle">웹툰</h4>
-                            <div class="webtoon_content_elements">
+                            
+                            <div class="content_elements">
                                 
                                 <ol class="webtoon_box">
                                         <li class="webtoon_row">
                                             <a href="#" class="webtoon_link">
                                                 <div class="webtoon_pic">
-                                                    <img src="image/thumbnail2.jpg" alt="webtoon_img">
+                                                    <img src="image/thumbnail2.jpg" alt="webtoon_img" class="webtoon_img">
                                                 </div>
                                                 <div class="webtoon_text">
                                                     <h5 class="webtoon_title">하루 3컷</h5>
@@ -510,7 +521,7 @@
                                         <li class="webtoon_row">
                                             <a href="#" class="webtoon_link">
                                             <div class="webtoon_pic">
-                                                <img src="image/thumbnail2.jpg" alt="webtoon_img">
+                                                <img src="image/thumbnail2.jpg" alt="webtoon_img" class="webtoon_img">
                                             </div>
                                             <div class="webtoon_text">
                                                 <h5 class="webtoon_title"><span class="webtoon_type_cut">컷툰</span>유미의 세포들</h5>
@@ -522,7 +533,7 @@
                                         <li class="webtoon_row">
                                             <a href="#" class="webtoon_link">
                                             <div class="webtoon_pic">
-                                                <img src="image/thumbnail2.jpg" alt="webtoon_img">
+                                                <img src="image/thumbnail2.jpg" alt="webtoon_img" class="webtoon_img">
                                             </div>
                                             <div class="webtoon_text">
                                                 <h5 class="webtoon_title">이말년씨리즈 2018</h5>
@@ -534,7 +545,7 @@
                                         <li class="webtoon_row">
                                             <a href="#" class="webtoon_link">
                                             <div class="webtoon_pic">
-                                                <img src="image/thumbnail2.jpg" alt="webtoon_img">
+                                                <img src="image/thumbnail2.jpg" alt="webtoon_img" class="webtoon_img">
                                             </div>
                                             <div class="webtoon_text">
                                                 <h5 class="webtoon_title"><span class="webtoon_type_smart">스마트툰</span>덴마</h5>
@@ -546,7 +557,7 @@
                                         <li class="webtoon_row">
                                             <a href="#" class="webtoon_link">
                                             <div class="webtoon_pic">
-                                                <img src="image/thumbnail2.jpg" alt="webtoon_img">
+                                                <img src="image/thumbnail2.jpg" alt="webtoon_img" class="webtoon_img">
                                             </div>
                                             <div class="webtoon_text">
                                                 <h5 class="webtoon_title"><span class="webtoon_type_cut">컷툰</span>1인용 기분</h5>
@@ -558,7 +569,7 @@
                                         <li class="webtoon_row">
                                             <a href="#" class="webtoon_link">
                                             <div class="webtoon_pic">
-                                                <img src="image/thumbnail2.jpg" alt="webtoon_img">
+                                                <img src="image/thumbnail2.jpg" alt="webtoon_img" class="webtoon_img">
                                             </div>
                                             <div class="webtoon_text">
                                                 <h5 class="webtoon_title">찬란하지 않아도 괜찮아</h5>
