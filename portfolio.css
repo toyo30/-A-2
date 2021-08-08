@@ -9,10 +9,11 @@ html {
 
 /* reset */
 
-body, div, h1, h2, h3, h4, h5, p, a,
-address, ul, ol, li, dl, dt, dd, article,
-footer, header, nav, section, input, button,
-input[type="checkbox"], textarea {
+body, div, h1, h2, h3, h4, h5, p, 
+a,address, ul, ol, li, dl, dt, dd, 
+article,footer, header, nav, section, 
+input, button, input[type="checkbox"], 
+textarea, img, fieldset, legend {
     margin:0; 
     padding:0; 
     border: 0;
@@ -168,20 +169,27 @@ body{
 /* table */
 
 .content_part{
-    margin-bottom: 10px;
-}
-
-.table_childsize {
     margin-bottom: 50px;
 }
 
-table {
+.content_part:nth-child(n+2){
+    margin-bottom: 10px;
+}
+
+
+.table_childsize,
+.table_refundsearch {
+    width: 938px;
     table-layout:fixed;
-    width: 100%;
     font-size: 12px;
     color: #555;
     box-sizing:border-box;
     border-collapse: collapse;
+    text-align:center;
+}
+
+.col_width{
+    width: calc(100% * 2/11);
 }
 
 .table_childsize th, td,
@@ -195,16 +203,13 @@ table {
 
 /* table_childsize */
 
-.table_childsize {
-    border: 1px solid #e4e4e4;
-    border-collapse:collapse;
+.col_classif {
+    width: calc(100% * 2/5);
 }
 
 .table_childsize th,
 .table_childsize td{
     border: 1px solid #e4e4e4;
-    height: 30px;
-    text-align:center;
 } 
 
 
@@ -231,6 +236,7 @@ table {
 
 .table_refundsearch td{
     text-align: right;
+    padding-right: 60px;
 }
 
 .table_tfoot th,
@@ -238,16 +244,12 @@ table {
     font-weight: bold;
 }
 
-.price_text {
-    margin-right: 60px;
-}
 
 /*form*/ 
 
 .join_box {
-    margin: 0 auto;
     border: 1px solid #e4e4e4;
-    background-color: #fbfbfb;
+    background: #fbfbfb;
     padding: 20px;
 }
 
@@ -255,6 +257,7 @@ table {
     margin-bottom: 20px;
 }
 .join_title {
+    font-weight:bold;
     font-size: 14px;
     margin: 20px 0 10px 0;
 }
@@ -282,25 +285,25 @@ table {
     display:flex;
 } 
 
-.bir_info + .bir_info {
-    margin-left: 10px;
-}
 
 .bir_info {
     width: calc(100% / 3);
     height: 30px;
+    border: 1px solid #e4e4e4;
+    padding: 8px;
+    background: #fff;
 }
 
-.bir_info select{
-    text-indent: 10px;
+.bir_info + .bir_info {
+    margin-left: 10px;
 }
-
 
 .bir {
     width: 100%;
     height: 100%;
-    border: 1px solid #e4e4e4;
     font-size: 12px;
+    text-indent: 10px;
+    border: 0 none;
 }
 
 /* form_radio */
@@ -323,7 +326,8 @@ table {
     top: 1.5px;
 }
 
-.rad_point {
+.rad_area .rad_point,
+.hobby_area .chec_point{
     margin-right: 5px;
 }
 
@@ -361,11 +365,11 @@ table {
     margin-left: 50px;
 }
 
-.chec_point {
-    margin-left: 50px;
+
+
+.hobby_area .chec_point {
+    margin-right: 5px;
 }
-
-
 /* form_greeting */
 .greeting_area {
     margin-bottom: 5px;
@@ -380,7 +384,6 @@ table {
     height: 100%;
     border: 0 none;
     resize: none;
-    /* input의 border을 없애고, 밖에 있는 보더로 표현하고 싶다. 이거 이거 어떻게 처리하냐.,,.,.,.*/
 }
 
 
@@ -446,6 +449,7 @@ table {
 .dic_dftn {
     font-size:12px;
     line-height: 18px;
+    word-break: break-all;
 }
 
 
@@ -538,12 +542,22 @@ table {
 
 .news_inner {
     border-bottom: 1px solid #e4e4e4;
-    padding: 20px 0;
+    padding: 10px 0;
+}
+
+.news_inner:nth-child(1){
+    padding: 0 0 10px 0;
 }
 
 .news_inner:nth-child(n+3) {
     border-bottom: 0;
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
+}
+
+.news_pic_link {
+    display: block;
+    width: 80px;
+    height: 80px;
 }
 
 .news_head {
@@ -554,21 +568,23 @@ table {
     line-height: 25px;
 }
 
+.news_head:hover{
+    color: #00c;
+    text-decoration: underline;
+}
+
 .news_summary {
     font-size: 12px;
     line-height: 20px;
+    word-break: break-all;
 }
 
 
 
 /* 웹툰*/
 
-.webtoon_box {
-    position: relative;
-}
 
 .webtoon_row {
-    width: 285px;
     float: left;
 }
 
@@ -591,10 +607,15 @@ table {
     display: block;
 }
 
-.webtoon_pic .webtoon_img{
+.webtoon_link:hover{
+    text-decoration: underline;
+}
+
+.webtoon_pic, .webtoon_img{
     width: 285px;
     height: 140px;
 }
+
 
 
 .webtoon_title {
@@ -610,18 +631,19 @@ table {
 .webtoon_type_cut, .webtoon_type_smart {
     font-size: 10px;
     color: #fff;
-    border: 1px solid;
     line-height: 14px;
     padding: 3px 5px;
     margin-right: 3px;
 }
 
 .webtoon_type_cut {
-    background: #71b036;
+    background: #80c83d;
+    border: 1px solid #71b036;
 }
 
 .webtoon_type_smart {
-    background: #ec5336;
+    background: #df4e28;
+    border: 1px solid #ec5336;;
 }
 
 /* footer */
